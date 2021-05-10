@@ -11,7 +11,7 @@ class RegisterForm extends Component {
     errors: [],
     name: '',
     email: '',
-    pathword: '',
+    password: '',
   };
 
   addMessage({ error, success }) {
@@ -42,6 +42,7 @@ class RegisterForm extends Component {
       password: this.state.password,
     };
     const body = JSON.stringify(data);
+
     this.props.setLoadingState(true);
 
     fetch(`${BASE_URL}users\/signup`, {
@@ -103,10 +104,10 @@ class RegisterForm extends Component {
             <br />
             <Button
               as="input"
-              type="pathword"
+              type="password"
               required
-              id="pathword"
-              value={this.state.pathword}
+              id="password"
+              value={this.state.password}
               onChange={this.handleChange}
             />
           </Label>

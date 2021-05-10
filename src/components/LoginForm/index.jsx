@@ -40,6 +40,7 @@ class LoginForm extends Component {
       password: this.state.password,
     };
     const body = JSON.stringify(data);
+
     this.props.setLoadingState(true);
 
     fetch(`${BASE_URL}users\/login`, {
